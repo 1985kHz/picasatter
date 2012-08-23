@@ -11,17 +11,36 @@ body{
   background: #000 url("../images/bg_d.jpg") 0 0 repeat;
 }
 .main{
-  width: 710px;
+  width: 725px;
   height: 768px;
   float:left;
 }
-.summary{
+div.summary{
+  z-index: 4;
+  position: relative;
+  top: 20px;
+  left: 5px;
   line-height: 60px;
-  font-size: 38px;
+  font-size: 42px;
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Helvetica, Arial, sans-serif;
   color: #000;
   text-align: center;
-  width: 584px;
+  width: 499px;
+  background-color: rgba(255,230,166, 0.9);
+  border-radius: 8px;
+  border: solid 5px #391515;
+  float: left;
+}
+div.timeleft{
+  position: relative;
+  top: 20px;
+  left: 20px;
+  line-height: 60px;
+  font-size: 30px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Helvetica, Arial, sans-serif;
+  color: #000;
+  text-align: center;
+  width: 100px;
   background-color: rgba(255,230,166, 0.9);
   border-radius: 8px;
   border: solid 5px #391515;
@@ -29,18 +48,21 @@ body{
 }
 .side{
   position: relative;
-  padding-top: 5px;
+  padding-top: 0px;
   padding-left: 35px;
   padding-right: 35px;
   width: 210px;
-  height: 800px;
+  height: 768px;
   background:url(../images/nega.png) repeat-y left top;
   float: left;
   overflow: hidden;
 }
 .photo{
+  position: absolute;
+  top: 80px;
+  //top: 30px;
   z-index: 0;
-  width: 670px;
+  width: 685px;
   height: 480px;
   text-align: center;
   margin: 20px;
@@ -61,13 +83,15 @@ body{
 
 /* ----- table style (from Twitter bootstrap) ----- */
 .tframe {
+  position: absolute;
+  top: 590px;
   height: 123px;
-  width: 100%;
-  padding: 20px 55px;
+  width: 710px;
+  padding: 20px 20px;
   background-color: rgba(0,0,0, 0.8);
 }
 .table {
-  font-size: 15px;
+  font-size: 30px;
   font-weight: bold;
   color: #CCC;
   width: 600px;
@@ -88,7 +112,8 @@ body{
   color: #333;
   width: 72px;
   padding: 10px;
-  line-height: 0px;
+  #line-height: 0px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
   border-top: 1px solid #666;
@@ -155,6 +180,7 @@ body{
 #rend {
   position: relative;
   z-index: 2;
+  top: 20px;
   width: 48px;
   height: 48px;
   margin-top: 10px;
@@ -290,25 +316,27 @@ body{
   background: url("../images/stop.png") 0 0 no-repeat;
 }
 .new {
-    position:relative;
-    font-size: 28px;
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Helvetica, Arial, sans-serif;
-    top: -50px;
-    left: 150px;
-    height: 1px;
-    width: 200px;
-    color: red;
+  position: absolute;
+  left: 187px;
+  height: 50px;
+  width: 50px;
+}
+.badge{
+  height: 50px;
+  width: 50px;
+  background: url("../images/new.png") 0 0 no-repeat;
 }
 div.toolcircle {
+    z-index: 2;
     height: 150px;
     width: 250px;  
     position: absolute;
-    top: 510px;
-    left: 100px;  
+    top: 360px;
+    left: 90px;  
     color: #EEE;  
     padding: 5px;  
     border: 1px solid #AAA;
-    opacity: 0.70;
+    opacity: 0.90;
     background-image: url("../images/circle.png");
     background-position: center center;
     background-repeat: no-repeat;
@@ -321,15 +349,16 @@ div.toolcircle {
 }  
   
 div.toolcross {
+    z-index: 3;
     height: 150px;
     width: 250px;  
     position: absolute;
-    top: 510px;
-    left: 380px;  
+    top: 360px;
+    left: 370px;  
     color: #EEE;  
     padding: 5px;  
     border: 1px solid #AAA;
-    opacity: 0.70;
+    opacity: 0.90;
     background-image: url("../images/cross.png");
     background-position: center center;
     background-repeat: no-repeat;
@@ -341,29 +370,50 @@ div.toolcross {
     display: none;
 } 
   
-.thumbnail img.mickey{
-    border: solid blue;
+img.mickey{
+    border: solid silver;
 }
-.thumbnail img.minny{
+img.minny{
     border: solid red;
 }
-.thumbnail img.dumbo{
+img.dumbo{
+    border: solid #36f;
+}
+img.fantasia{
+    border: solid blue;
+}
+img.marie{
+    border: solid white;
+}
+img.pminny{
+    border: solid #ff1493;
+}
+img.tigger{
+    border: solid #f90;
+}
+img.greenmen{
     border: solid green;
+}
+.icon img{
+    height: 59px;
+    width: 59px;
 }
 .main img.subwindow {
     z-index: 1;
-    width: 150px;
+    max-height:150px;
+    max-width: 150px;
     position: absolute;
-    top: 100px;
-    left: 550px;  
+    opacity: 0.8;
+    //top: 530px;
+    //left: 550px;
+    top: 60px;
+    left: 30px;
     color: #EEE;  
-    padding: 5px;  
+    border: solid 5px #CCC; 
     background-position: center center;
     background-repeat: no-repeat;
     -moz-background-size: contain; 
     background-size: contain;
-    -webkit-border-radius: 8px;
-            border-radius: 8px;
     display: none;
 }  
   
